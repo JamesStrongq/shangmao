@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.jk.domain.ContractProductC" table="contract_product_c" schema="jkdb">
+        <id name="contractProductId" column="CONTRACT_PRODUCT_ID"/>
+        <property name="contractId" column="CONTRACT_ID"/>
+        <property name="factoryId" column="FACTORY_ID"/>
+        <property name="exportListId" column="EXPORT_LIST_ID"/>
+        <property name="invoiceId" column="INVOICE_ID"/>
+        <property name="productName" column="PRODUCT_NAME"/>
+        <property name="productNo" column="PRODUCT_NO"/>
+        <property name="productImage" column="PRODUCT_IMAGE"/>
+        <property name="productDesc" column="PRODUCT_DESC"/>
+        <property name="loadingRate" column="LOADING_RATE"/>
+        <property name="packingUnit" column="PACKING_UNIT"/>
+        <property name="cnumber" column="CNUMBER"/>
+        <property name="outNumber" column="OUT_NUMBER"/>
+        <property name="finished" column="FINISHED"/>
+        <property name="grossWeight" column="GROSS_WEIGHT"/>
+        <property name="netWeight" column="NET_WEIGHT"/>
+        <property name="csize" column="CSIZE"/>
+        <property name="sizeLength" column="SIZE_LENGTH"/>
+        <property name="sizeWidth" column="SIZE_WIDTH"/>
+        <property name="sizeHeight" column="SIZE_HEIGHT"/>
+        <property name="productRequest" column="PRODUCT_REQUEST"/>
+        <property name="factory" column="FACTORY"/>
+        <property name="price" column="PRICE"/>
+        <property name="amount" column="AMOUNT"/>
+        <property name="cunit" column="CUNIT"/>
+        <property name="boxNum" column="BOX_NUM"/>
+        <property name="exPrice" column="EX_PRICE"/>
+        <property name="exAmount" column="EX_AMOUNT"/>
+        <property name="exUnit" column="EX_UNIT"/>
+        <property name="noTax" column="NO_TAX"/>
+        <property name="tax" column="TAX"/>
+        <property name="costPrice" column="COST_PRICE"/>
+        <property name="costTax" column="COST_TAX"/>
+        <property name="accessories" column="ACCESSORIES"/>
+        <property name="orderNo" column="ORDER_NO"/>
+        <many-to-one name="factoryC" column="factory_id" class="cn.itcast.jk.domain.FactoryC"/>
+        <set name="extCproductCSet" table="ext_cproduct_c" lazy="false">
+            <key column="ext_cproduct_id"></key>
+            <one-to-many class="cn.itcast.jk.domain.ExtCproductC"/>
+        </set>
+    </class>
+</hibernate-mapping>

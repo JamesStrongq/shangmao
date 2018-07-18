@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.jk.domain.ExportC" table="export_c" schema="jkdb">
+        <id name="exportId" column="EXPORT_ID"/>
+        <property name="packingListId" column="PACKING_LIST_ID"/>
+        <property name="contractId" column="CONTRACT_ID"/>
+        <property name="inputDate" column="INPUT_DATE"/>
+        <property name="contractIds" column="CONTRACT_IDS"/>
+        <property name="customerContract" column="CUSTOMER_CONTRACT"/>
+        <property name="lcno" column="LCNO"/>
+        <property name="consignee" column="CONSIGNEE"/>
+        <property name="marks" column="MARKS"/>
+        <property name="shipmentPort" column="SHIPMENT_PORT"/>
+        <property name="destinationPort" column="DESTINATION_PORT"/>
+        <property name="transportMode" column="TRANSPORT_MODE"/>
+        <property name="priceCondition" column="PRICE_CONDITION"/>
+        <property name="remark" column="REMARK"/>
+        <property name="boxNum" column="BOX_NUM"/>
+        <property name="cnumber" column="CNUMBER"/>
+        <property name="packingUnit" column="PACKING_UNIT"/>
+        <property name="grossWeight" column="GROSS_WEIGHT"/>
+        <property name="netWeight" column="NET_WEIGHT"/>
+        <property name="sizeLength" column="SIZE_LENGTH"/>
+        <property name="sizeWidth" column="SIZE_WIDTH"/>
+        <property name="sizeHeight" column="SIZE_HEIGHT"/>
+        <property name="csize" column="CSIZE"/>
+        <property name="amount" column="AMOUNT"/>
+        <property name="noTax" column="NO_TAX"/>
+        <property name="tax" column="TAX"/>
+        <property name="costPrice" column="COST_PRICE"/>
+        <property name="costTax" column="COST_TAX"/>
+        <property name="state" column="STATE"/>
+        <property name="createBy" column="CREATE_BY"/>
+        <property name="createDept" column="CREATE_DEPT"/>
+        <property name="createTime" column="CREATE_TIME"/>
+    </class>
+</hibernate-mapping>

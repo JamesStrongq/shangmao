@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.itcast.jk.domain.ContractC" table="contract_c" schema="jkdb">
+        <id name="contractId" type="java.lang.String">
+            <column name="CONTRACT_ID"/>
+            <generator class="assigned"/>
+        </id>
+
+        <property name="offeror" column="OFFEROR" type="java.lang.String"/>
+        <property name="contractNo" column="CONTRACT_NO" type="java.lang.String"/>
+        <property name="signingDate" column="SIGNING_DATE" type="java.util.Date"/>
+        <property name="inputBy" column="INPUT_BY" type="java.lang.String"/>
+        <property name="checkBy" column="CHECK_BY" type="java.lang.String"/>
+        <property name="inspector" column="INSPECTOR" type="java.lang.String"/>
+        <property name="totalAmount" column="TOTAL_AMOUNT" type="java.lang.Double"/>
+        <property name="crequest" column="CREQUEST" type="java.lang.String"/>
+        <property name="customName" column="CUSTOM_NAME" type="java.lang.String"/>
+        <property name="shipTime" column="SHIP_TIME" type="java.util.Date"/>
+        <property name="importNum" column="IMPORT_NUM" type="java.lang.Integer"/>
+        <property name="deliveryPeriod" column="DELIVERY_PERIOD" type="java.util.Date"/>
+        <property name="remark" column="REMARK" type="java.lang.String"/>
+        <property name="printStyle" column="PRINT_STYLE" type="java.lang.String"/>
+        <property name="oldState" column="OLD_STATE" type="java.lang.Integer"/>
+        <property name="state" column="STATE" type="java.lang.Integer"/>
+        <property name="outState" column="OUT_STATE" type="java.lang.Integer"/>
+        <property name="tradeTerms" column="TRADE_TERMS" type="java.lang.String"/>
+        <property name="createBy" column="CREATE_BY" type="java.lang.String"/>
+        <property name="createDept" column="CREATE_DEPT" type="java.lang.String"/>
+        <property name="createTime" column="CREATE_TIME" type="java.util.Date"/>
+        <set name="contractProductCSet" table="contract_product_c" lazy="false" inverse="true">
+            <key column="CONTRACT_PRODUCT_ID"></key>
+            <one-to-many class="cn.itcast.jk.domain.ContractProductC"/>
+        </set>
+    </class>
+</hibernate-mapping>
